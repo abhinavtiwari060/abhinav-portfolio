@@ -63,7 +63,7 @@ export default function ContactSection() {
           <h2 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif' }}>
             Let's <span className="gradient-text">Work Together</span>
           </h2>
-          <p style={{ marginTop: 16, color: 'rgba(255,255,255,0.45)', fontSize: 16, maxWidth: 480, margin: '16px auto 0' }}>
+          <p style={{ marginTop: 16, color: 'rgba(var(--color-white-rgb),0.45)', fontSize: 16, maxWidth: 480, margin: '16px auto 0' }}>
             Have a project in mind? I'd love to hear about it. Let's build something amazing together.
           </p>
         </motion.div>
@@ -80,7 +80,7 @@ export default function ContactSection() {
               <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 8, fontFamily: 'Space Grotesk, sans-serif' }}>
                 Open to Opportunities
               </h3>
-              <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(255,255,255,0.55)', marginBottom: 28 }}>
+              <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(var(--color-white-rgb),0.55)', marginBottom: 28 }}>
                 I'm currently available for freelance projects and full-time roles. Whether you need a full product built or a beautiful UI polished — let's talk!
               </p>
 
@@ -92,14 +92,14 @@ export default function ContactSection() {
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     color: '#a855f7', flexShrink: 0,
                   }}><Icon size={16} /></div>
-                  <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)' }}>{label}</span>
+                  <span style={{ fontSize: 14, color: 'rgba(var(--color-white-rgb),0.6)' }}>{label}</span>
                 </div>
               ))}
             </div>
 
             {/* Social links */}
             <div className="glass" style={{ padding: 28 }}>
-              <p style={{ fontSize: 13, fontWeight: 600, color: 'rgba(255,255,255,0.4)', marginBottom: 16, letterSpacing: 1 }}>
+              <p style={{ fontSize: 13, fontWeight: 600, color: 'rgba(var(--color-white-rgb),0.4)', marginBottom: 16, letterSpacing: 1 }}>
                 FIND ME ON
               </p>
               <div style={{ display: 'flex', gap: 12 }}>
@@ -133,7 +133,7 @@ export default function ContactSection() {
                   className="form-row">
                   <div>
                     <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8,
-                      color: 'rgba(255,255,255,0.5)' }}>Your Name</label>
+                      color: 'rgba(var(--color-white-rgb),0.5)' }}>Your Name</label>
                     <input
                       className="input-glass" placeholder="John Doe" required
                       value={form.name} onChange={(e) => setForm(f => ({ ...f, name: e.target.value }))}
@@ -141,7 +141,7 @@ export default function ContactSection() {
                   </div>
                   <div>
                     <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8,
-                      color: 'rgba(255,255,255,0.5)' }}>Email Address</label>
+                      color: 'rgba(var(--color-white-rgb),0.5)' }}>Email Address</label>
                     <input
                       type="email" className="input-glass" placeholder="hello@example.com" required
                       value={form.email} onChange={(e) => setForm(f => ({ ...f, email: e.target.value }))}
@@ -151,13 +151,13 @@ export default function ContactSection() {
 
                 <div style={{ marginBottom: 20 }}>
                   <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8,
-                    color: 'rgba(255,255,255,0.5)' }}>Subject</label>
+                    color: 'rgba(var(--color-white-rgb),0.5)' }}>Subject</label>
                   <input className="input-glass" placeholder="Project Collaboration" />
                 </div>
 
                 <div style={{ marginBottom: 28 }}>
                   <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8,
-                    color: 'rgba(255,255,255,0.5)' }}>Message</label>
+                    color: 'rgba(var(--color-white-rgb),0.5)' }}>Message</label>
                   <textarea
                     className="input-glass" rows={5} placeholder="Tell me about your project..." required
                     value={form.message} onChange={(e) => setForm(f => ({ ...f, message: e.target.value }))}

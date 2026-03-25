@@ -49,8 +49,8 @@ function ProjectCard({ project, index }) {
         transformStyle: 'preserve-3d',
         cursor: 'none',
         borderRadius: 16,
-        border: hovered ? '1px solid rgba(168,85,247,0.4)' : '1px solid rgba(255,255,255,0.08)',
-        background: 'rgba(255,255,255,0.03)',
+        border: hovered ? '1px solid rgba(168,85,247,0.4)' : '1px solid rgba(var(--color-white-rgb),0.08)',
+        background: 'rgba(var(--color-white-rgb),0.03)',
         backdropFilter: 'blur(20px)',
         overflow: 'hidden',
         boxShadow: hovered ? '0 20px 60px rgba(168,85,247,0.2)' : '0 4px 20px rgba(0,0,0,0.3)',
@@ -66,7 +66,7 @@ function ProjectCard({ project, index }) {
         />
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to bottom, transparent 40%, rgba(5,5,16,0.9))',
+          background: 'linear-gradient(to bottom, transparent 40%, rgba(var(--color-dark-rgb),0.9))',
         }} />
         {/* Overlay buttons */}
         <motion.div
@@ -74,21 +74,21 @@ function ProjectCard({ project, index }) {
           style={{
             position: 'absolute', inset: 0,
             display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 12,
-            background: 'rgba(5,5,16,0.6)', backdropFilter: 'blur(4px)',
+            background: 'rgba(var(--color-dark-rgb),0.6)', backdropFilter: 'blur(4px)',
           }}
         >
           <a href={project.demo}
             style={{
               padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600,
               background: 'linear-gradient(135deg, #a855f7, #06b6d4)',
-              color: '#fff', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6,
+              color: "var(--color-white)", textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6,
             }}
           ><ExternalLink size={14} /> Live Demo</a>
           <a href={project.github}
             style={{
               padding: '8px 16px', borderRadius: 8, fontSize: 13, fontWeight: 600,
-              background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.2)',
-              color: '#fff', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6,
+              background: 'rgba(var(--color-white-rgb),0.1)', border: '1px solid rgba(var(--color-white-rgb),0.2)',
+              color: "var(--color-white)", textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 6,
             }}
           ><GithubIcon size={14} /> Code</a>
         </motion.div>
@@ -99,7 +99,7 @@ function ProjectCard({ project, index }) {
         <h3 style={{ fontSize: 18, fontWeight: 700, marginBottom: 8, fontFamily: 'Space Grotesk, sans-serif' }}>
           {project.title}
         </h3>
-        <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(255,255,255,0.5)', marginBottom: 16 }}>
+        <p style={{ fontSize: 13, lineHeight: 1.7, color: 'rgba(var(--color-white-rgb),0.5)', marginBottom: 16 }}>
           {project.description}
         </p>
         {/* Tags */}
@@ -143,7 +143,7 @@ export default function ProjectsSection() {
           <h2 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif' }}>
             Learning <span className="gradient-text">Projects</span>
           </h2>
-          <p style={{ marginTop: 16, color: 'rgba(255,255,255,0.45)', fontSize: 16, maxWidth: 480, margin: '16px auto 0' }}>
+          <p style={{ marginTop: 16, color: 'rgba(var(--color-white-rgb),0.45)', fontSize: 16, maxWidth: 480, margin: '16px auto 0' }}>
             A clean showcase of the apps, clones, and tools I'm building to strengthen my technical skills.
           </p>
         </motion.div>

@@ -20,7 +20,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer style={{
-      borderTop: '1px solid rgba(255,255,255,0.06)',
+      borderTop: '1px solid rgba(var(--color-white-rgb),0.06)',
       padding: '48px 32px 32px',
     }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
@@ -34,7 +34,7 @@ export default function Footer() {
               display: 'flex', alignItems: 'center', justifyContent: 'center',
               boxShadow: '0 0 15px rgba(168,85,247,0.3)',
             }}>
-              <span style={{ fontWeight: 800, color: '#fff', fontFamily: 'Space Grotesk, sans-serif' }}>A</span>
+              <span style={{ fontWeight: 800, color: "var(--color-white)", fontFamily: 'Space Grotesk, sans-serif' }}>A</span>
             </div>
             <span className="gradient-text" style={{ fontWeight: 700, fontSize: 17, fontFamily: 'Space Grotesk, sans-serif' }}>{db.profile.name}</span>
           </div>
@@ -45,11 +45,11 @@ export default function Footer() {
               <a key={label} href={href}
                 onClick={(e) => { e.preventDefault(); document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); }}
                 style={{
-                  padding: '6px 14px', fontSize: 13, color: 'rgba(255,255,255,0.45)',
+                  padding: '6px 14px', fontSize: 13, color: 'rgba(var(--color-white-rgb),0.45)',
                   textDecoration: 'none', borderRadius: 6, transition: 'color 0.2s',
                 }}
                 onMouseEnter={(e) => e.currentTarget.style.color = '#a855f7'}
-                onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(255,255,255,0.45)'}
+                onMouseLeave={(e) => e.currentTarget.style.color = 'rgba(var(--color-white-rgb),0.45)'}
               >{label}</a>
             ))}
           </nav>
@@ -60,27 +60,27 @@ export default function Footer() {
               <a key={i} href={href}
                 style={{
                   width: 38, height: 38, borderRadius: 8,
-                  background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
+                  background: 'rgba(var(--color-white-rgb),0.04)', border: '1px solid rgba(var(--color-white-rgb),0.08)',
                   display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'all 0.2s',
+                  color: 'rgba(var(--color-white-rgb),0.4)', textDecoration: 'none', transition: 'all 0.2s',
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.color = '#a855f7'; e.currentTarget.style.borderColor = 'rgba(168,85,247,0.3)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.4)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(var(--color-white-rgb),0.4)'; e.currentTarget.style.borderColor = 'rgba(var(--color-white-rgb),0.08)'; }}
               ><Icon size={16} /></a>
             ))}
           </div>
         </div>
 
         <div style={{
-          borderTop: '1px solid rgba(255,255,255,0.05)',
+          borderTop: '1px solid rgba(var(--color-white-rgb),0.05)',
           paddingTop: 24,
           display: 'flex', justifyContent: 'space-between', alignItems: 'center',
           flexWrap: 'wrap', gap: 12,
         }}>
-          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)' }}>
+          <p style={{ fontSize: 13, color: 'rgba(var(--color-white-rgb),0.25)' }}>
             © {year} {db.profile.name}. All rights reserved.
           </p>
-          <p style={{ fontSize: 13, color: 'rgba(255,255,255,0.25)', display: 'flex', alignItems: 'center', gap: 6 }}>
+          <p style={{ fontSize: 13, color: 'rgba(var(--color-white-rgb),0.25)', display: 'flex', alignItems: 'center', gap: 6 }}>
             Built with <Heart size={12} style={{ color: '#ec4899' }} fill="#ec4899" /> using React & Framer Motion
             {' | '}<a href="#/admin" style={{ color: '#a855f7', textDecoration: 'none' }}>Admin Login</a>
           </p>

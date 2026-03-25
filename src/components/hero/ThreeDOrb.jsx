@@ -1,9 +1,9 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useRef, useEffect } from 'react';
-import { MeshDistortMaterial, Sphere } from '@react-three/drei';
+import { useRef, useEffect, Suspense } from 'react';
+import { Float, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
-function AnimatedOrb() {
+function ProfileCard() {
   const meshRef = useRef();
   const mouse = useRef({ x: 0, y: 0 });
 
@@ -16,40 +16,37 @@ function AnimatedOrb() {
     return () => window.removeEventListener('mousemove', onMove);
   }, []);
 
+  const texture = useTexture(`/avatar.jpg`);
+
   useFrame((state) => {
-    const t = state.clock.getElapsedTime();
     meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, mouse.current.y * 0.3, 0.05);
-    meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, mouse.current.x * 0.3 + t * 0.15, 0.05);
-    meshRef.current.position.y = Math.sin(t * 0.5) * 0.15;
+    meshRef.current.rotation.y = THREE.MathUtils.lerp(meshRef.current.rotation.y, mouse.current.x * 0.3, 0.05);
   });
 
   return (
-    <Sphere ref={meshRef} args={[1.4, 100, 100]}>
-      <MeshDistortMaterial
-        color="#7c3aed"
-        attach="material"
-        distort={0.45}
-        speed={2.5}
-        roughness={0.1}
-        metalness={0.8}
-        emissive="#4c1d95"
-        emissiveIntensity={0.4}
-        wireframe={false}
-      />
-    </Sphere>
-  );
-}
+    <Float speed={2.5} rotationIntensity={0.2} floatIntensity={0.8}>
+      <group ref={meshRef}>
+        
+        {/* Glow neon ring around the 3D coin edge */}
+        <mesh position={[0, 0, -0.05]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[1.35, 1.35, 0.1, 64]} />
+          <meshBasicMaterial color="#a855f7" wireframe transparent opacity={0.3} />
+        </mesh>
 
-function WireOrb() {
-  const ref = useRef();
-  useFrame((state) => {
-    ref.current.rotation.y = state.clock.getElapsedTime() * 0.3;
-    ref.current.rotation.x = state.clock.getElapsedTime() * 0.15;
-  });
-  return (
-    <Sphere ref={ref} args={[1.65, 18, 18]}>
-      <meshBasicMaterial color="#06b6d4" wireframe opacity={0.15} transparent />
-    </Sphere>
+        {/* Solid heavy base coin */}
+        <mesh position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
+          <cylinderGeometry args={[1.3, 1.3, 0.15, 64]} />
+          <meshStandardMaterial color="#0b0b1a" metalness={0.6} roughness={0.3} />
+        </mesh>
+
+        {/* Circular photo magically floating inside the frame */}
+        <mesh position={[0, 0, 0.08]}>
+          <circleGeometry args={[1.25, 64]} />
+          <meshBasicMaterial map={texture} />
+        </mesh>
+
+      </group>
+    </Float>
   );
 }
 
@@ -63,8 +60,9 @@ export default function ThreeDOrb() {
       <directionalLight position={[5, 5, 5]} intensity={1} color="#a855f7" />
       <directionalLight position={[-5, -3, -5]} intensity={0.5} color="#06b6d4" />
       <pointLight position={[0, 0, 3]} intensity={2} color="#a855f7" />
-      <AnimatedOrb />
-      <WireOrb />
+      <Suspense fallback={null}>
+        <ProfileCard />
+      </Suspense>
     </Canvas>
   );
 }

@@ -85,15 +85,6 @@
   ],
   "blogs": [
     {
-      "id": 1774475812349,
-      "title": "New Blog Post",
-      "date": "26/3/2026",
-      "category": "",
-      "excerpt": "",
-      "readTime": "",
-      "link": ""
-    },
-    {
       "id": 1,
       "title": "Understanding JavaScript Closures",
       "date": "March 15, 2025",

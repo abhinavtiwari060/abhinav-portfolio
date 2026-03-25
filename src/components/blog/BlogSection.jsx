@@ -17,14 +17,14 @@ function BlogCard({ post, index }) {
       whileHover={{ y: -8, boxShadow: '0 30px 60px rgba(168,85,247,0.15)' }}
       style={{
         borderRadius: 16, overflow: 'hidden',
-        background: 'rgba(255,255,255,0.03)',
-        border: '1px solid rgba(255,255,255,0.07)',
+        background: 'rgba(var(--color-white-rgb),0.03)',
+        border: '1px solid rgba(var(--color-white-rgb),0.07)',
         backdropFilter: 'blur(20px)',
         cursor: 'none',
         transition: 'border-color 0.3s',
       }}
       onMouseEnter={(e) => e.currentTarget.style.borderColor = 'rgba(168,85,247,0.3)'}
-      onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'}
+      onMouseLeave={(e) => e.currentTarget.style.borderColor = 'rgba(var(--color-white-rgb),0.07)'}
       data-hover
     >
       {/* Color top bar */}
@@ -43,7 +43,7 @@ function BlogCard({ post, index }) {
             color: categoryColors[post.category] || '#a855f7',
             letterSpacing: 0.5,
           }}>{post.category}</span>
-          <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', display: 'flex', alignItems: 'center', gap: 5 }}>
+          <span style={{ fontSize: 12, color: 'rgba(var(--color-white-rgb),0.35)', display: 'flex', alignItems: 'center', gap: 5 }}>
             <Clock size={12} /> {post.readTime}
           </span>
         </div>
@@ -53,12 +53,12 @@ function BlogCard({ post, index }) {
           fontFamily: 'Space Grotesk, sans-serif',
         }}>{post.title}</h3>
         
-        <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(255,255,255,0.5)', marginBottom: 20 }}>
+        <p style={{ fontSize: 14, lineHeight: 1.7, color: 'rgba(var(--color-white-rgb),0.5)', marginBottom: 20 }}>
           {post.excerpt}
         </p>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.3)' }}>{post.date}</span>
+          <span style={{ fontSize: 12, color: 'rgba(var(--color-white-rgb),0.3)' }}>{post.date}</span>
           <motion.a href={post.link || '#'} target="_blank" rel="noopener noreferrer" whileHover={{ x: 4 }}
             style={{
               display: 'flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 600,
@@ -96,7 +96,7 @@ export default function BlogSection() {
           <h2 style={{ fontSize: 'clamp(32px, 4vw, 52px)', fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif' }}>
             Latest <span className="gradient-text-pink">Articles</span>
           </h2>
-          <p style={{ marginTop: 16, color: 'rgba(255,255,255,0.45)', fontSize: 16, maxWidth: 480, margin: '16px auto 0' }}>
+          <p style={{ marginTop: 16, color: 'rgba(var(--color-white-rgb),0.45)', fontSize: 16, maxWidth: 480, margin: '16px auto 0' }}>
             A collection of my recent articles on programming, JavaScript, and software development.
           </p>
         </motion.div>

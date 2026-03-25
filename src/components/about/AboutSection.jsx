@@ -115,10 +115,10 @@ export default function AboutSection() {
               <h4 style={{ fontSize: 18, fontWeight: 700, marginBottom: 14, fontFamily: 'Space Grotesk, sans-serif' }}>
                 Hey there! 👋
               </h4>
-              <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(255,255,255,0.65)', marginBottom: 16 }}>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(var(--color-white-rgb),0.65)', marginBottom: 16 }}>
                 {db.profile.aboutBio1}
               </p>
-              <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(255,255,255,0.65)' }}>
+              <p style={{ fontSize: 15, lineHeight: 1.8, color: 'rgba(var(--color-white-rgb),0.65)' }}>
                 {db.profile.aboutBio2}
               </p>
 
@@ -129,7 +129,7 @@ export default function AboutSection() {
                     whileHover={{ scale: 1.1, y: -3 }}
                     style={{
                       padding: '6px 12px', borderRadius: 8, fontSize: 13,
-                      background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)',
+                      background: 'rgba(var(--color-white-rgb),0.04)', border: '1px solid rgba(var(--color-white-rgb),0.08)',
                       display: 'flex', alignItems: 'center', gap: 6,
                       transition: 'all 0.2s', cursor: 'none',
                     }}
@@ -153,7 +153,7 @@ export default function AboutSection() {
               <h3 style={{ fontSize: 22, fontWeight: 700, marginBottom: 8, fontFamily: 'Space Grotesk, sans-serif' }}>
                 Skills & Expertise
               </h3>
-              <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.45)', marginBottom: 32 }}>
+              <p style={{ fontSize: 14, color: 'rgba(var(--color-white-rgb),0.45)', marginBottom: 32 }}>
                 Proficiency levels across my core stack
               </p>
               {skills.map((skill, i) => (
@@ -174,7 +174,7 @@ export default function AboutSection() {
                   <div style={{ color: '#a855f7', marginBottom: 8, display: 'flex', justifyContent: 'center' }}>{icon}</div>
                   <div style={{ fontSize: 28, fontWeight: 800, fontFamily: 'Space Grotesk, sans-serif' }}
                     className="gradient-text">{num}</div>
-                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 4 }}>{label}</div>
+                  <div style={{ fontSize: 12, color: 'rgba(var(--color-white-rgb),0.45)', marginTop: 4 }}>{label}</div>
                 </motion.div>
               ))}
             </div>

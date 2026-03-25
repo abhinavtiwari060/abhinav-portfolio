@@ -48,7 +48,7 @@ export default function Preloader() {
               margin: '0 auto 16px',
               boxShadow: '0 0 40px rgba(168,85,247,0.5)',
             }}>
-              <span style={{ fontSize: 36, fontWeight: 800, color: '#fff', fontFamily: 'Space Grotesk, sans-serif' }}>A</span>
+              <span style={{ fontSize: 36, fontWeight: 800, color: "var(--color-white)", fontFamily: 'Space Grotesk, sans-serif' }}>A</span>
             </div>
             <p className="gradient-text" style={{ fontSize: 13, letterSpacing: 4, textTransform: 'uppercase', fontWeight: 600 }}>
               Loading Portfolio
@@ -57,7 +57,7 @@ export default function Preloader() {
 
           {/* Progress bar */}
           <div style={{ width: 240 }}>
-            <div style={{ background: 'rgba(255,255,255,0.08)', borderRadius: 99, height: 4, overflow: 'hidden' }}>
+            <div style={{ background: 'rgba(var(--color-white-rgb),0.08)', borderRadius: 99, height: 4, overflow: 'hidden' }}>
               <motion.div
                 initial={{ width: 0 }}
                 animate={{ width: `${progress}%` }}
@@ -69,7 +69,7 @@ export default function Preloader() {
                 }}
               />
             </div>
-            <p style={{ textAlign: 'center', marginTop: 12, fontSize: 13, color: 'rgba(255,255,255,0.4)' }}>
+            <p style={{ textAlign: 'center', marginTop: 12, fontSize: 13, color: 'rgba(var(--color-white-rgb),0.4)' }}>
               {Math.round(progress)}%
             </p>
           </div>
