@@ -7,7 +7,7 @@ export default function Admin() {
   const [saving, setSaving] = useState(false);
   const [message, setMessage] = useState('');
   const [activeTab, setActiveTab] = useState('projects');
-  
+
   // Login State
   const [auth, setAuth] = useState(false);
   const [email, setEmail] = useState('');
@@ -35,7 +35,7 @@ export default function Admin() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === 'admin@abhinav.dev' && pass === 'admin123') {
+    if (email === 'abhitiwariaj@gmail.com' && pass === 'abhinav@9452#tiwari') {
       setAuth(true);
       setLoginError('');
     } else {
@@ -198,7 +198,7 @@ export default function Admin() {
   return (
     <div style={{ minHeight: '100vh', background: '#050510', color: '#fff', padding: '40px 20px', fontFamily: 'Inter, sans-serif' }}>
       <div style={{ maxWidth: 1000, margin: '0 auto' }}>
-        
+
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 30 }}>
           <h1 style={{ fontSize: 32, fontWeight: 800 }}>Admin Dashboard</h1>
           <div style={{ display: 'flex', gap: 12 }}>
@@ -220,9 +220,9 @@ export default function Admin() {
         {/* Tabs */}
         <div style={{ display: 'flex', gap: 10, marginBottom: 20, flexWrap: 'wrap' }}>
           {['profile', 'projects', 'blogs'].map((tab) => (
-             <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: '10px 24px', background: activeTab === tab ? 'rgba(168,85,247,0.2)' : 'transparent', border: '1px solid', borderColor: activeTab === tab ? '#a855f7' : 'rgba(255,255,255,0.1)', color: activeTab === tab ? '#a855f7' : '#fff', borderRadius: 8, cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize' }}>
-               {tab}
-             </button>
+            <button key={tab} onClick={() => setActiveTab(tab)} style={{ padding: '10px 24px', background: activeTab === tab ? 'rgba(168,85,247,0.2)' : 'transparent', border: '1px solid', borderColor: activeTab === tab ? '#a855f7' : 'rgba(255,255,255,0.1)', color: activeTab === tab ? '#a855f7' : '#fff', borderRadius: 8, cursor: 'pointer', fontWeight: 600, textTransform: 'capitalize' }}>
+              {tab}
+            </button>
           ))}
         </div>
 
@@ -230,7 +230,7 @@ export default function Admin() {
           <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 24 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginBottom: 24, paddingBottom: 24, borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
               <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'rgba(255,255,255,0.1)', overflow: 'hidden' }}>
-                <img src={`/profile.jpg?t=${Date.now()}`} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => e.target.style.display='none'} />
+                <img src={`/profile.jpg?t=${Date.now()}`} alt="Profile" style={{ width: '100%', height: '100%', objectFit: 'cover' }} onError={(e) => e.target.style.display = 'none'} />
               </div>
               <div>
                 <h3 style={{ fontSize: 16, marginBottom: 8, fontWeight: 600 }}>Profile Photo</h3>
@@ -279,7 +279,7 @@ export default function Admin() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
               {data[activeTab].map((item, index) => (
                 <div key={item.id} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: 24, position: 'relative' }}>
-                  
+
                   <button onClick={() => handleDelete(item.id)} style={{ position: 'absolute', top: 20, right: 20, background: 'rgba(239, 68, 68, 0.1)', color: '#ef4444', border: 'none', padding: 8, borderRadius: 8, cursor: 'pointer' }}>
                     <Trash size={16} />
                   </button>
@@ -288,7 +288,7 @@ export default function Admin() {
                     {Object.keys(item).filter(k => k !== 'id').map(field => (
                       <div key={field} style={{ gridColumn: (field === 'description' || field === 'excerpt') ? 'span 2' : 'span 1' }}>
                         <label style={{ display: 'block', fontSize: 12, textTransform: 'uppercase', color: 'rgba(255,255,255,0.4)', marginBottom: 8, letterSpacing: 1 }}>{field}</label>
-                        
+
                         {(field === 'description' || field === 'excerpt') ? (
                           <textarea
                             value={item[field]}
