@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Plus, Trash, Save, Image as ImageIcon, Lock, FileText } from 'lucide-react';
+import fallbackDb from './data/db.json';
 
 export default function Admin() {
   const [data, setData] = useState({ profile: {}, projects: [], blogs: [] });
@@ -24,16 +25,26 @@ export default function Admin() {
       if (res.ok) {
         const json = await res.json();
         setData({
-          profile: json.profile || {},
-          projects: json.projects || [],
-          blogs: json.blogs || []
+          profile: json.profile || fallbackDb.profile || {},
+          projects: json.projects || fallbackDb.projects || [],
+          blogs: json.blogs || fallbackDb.blogs || []
         });
       } else {
-        setMessage('Failed to load data. API returned error.');
+        // Fallback if the endpoint is missing (like on Vercel deployment)
+        setData({
+          profile: fallbackDb.profile || {},
+          projects: fallbackDb.projects || [],
+          blogs: fallbackDb.blogs || []
+        });
       }
     } catch (e) {
-      console.error(e);
-      setMessage('Failed to load data.');
+      console.warn('API unavailable, falling back to local JSON.', e);
+      // Fallback on error (like HTML 200 responses from Vercel)
+      setData({
+        profile: fallbackDb.profile || {},
+        projects: fallbackDb.projects || [],
+        blogs: fallbackDb.blogs || []
+      });
     } finally {
       setLoading(false);
     }
@@ -58,14 +69,17 @@ export default function Admin() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
-      if (res.ok) {
+      const contentType = res.headers.get("content-type");
+      if (res.ok && contentType && contentType.includes("application/json")) {
         setMessage('Changes saved successfully! Refresh the main site to see.');
+      } else if (res.ok) {
+        setMessage('Notice: Dynamic saving is disabled on Vercel (Read-Only). Run locally to save changes!');
       } else {
         setMessage('Failed to save changes.');
       }
     } catch (e) {
       console.error(e);
-      setMessage('Error saving data.');
+      setMessage('Notice: Vercel deployments are read-only. Run locally to update data!');
     } finally {
       setSaving(false);
       setTimeout(() => setMessage(''), 3000);
@@ -85,8 +99,11 @@ export default function Admin() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ image: base64Data }),
         });
-        if (res.ok) {
+        const contentType = res.headers.get("content-type");
+        if (res.ok && contentType && contentType.includes("application/json")) {
           setMessage('Profile photo updated successfully!');
+        } else if (res.ok) {
+          setMessage('Notice: Cannot upload files directly on Vercel. Do this locally.');
         } else {
           setMessage('Failed to upload photo.');
         }
@@ -110,8 +127,11 @@ export default function Admin() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ image: base64Data }),
         });
-        if (res.ok) {
+        const contentType = res.headers.get("content-type");
+        if (res.ok && contentType && contentType.includes("application/json")) {
           setMessage('Hero Avatar updated successfully!');
+        } else if (res.ok) {
+          setMessage('Notice: Cannot upload files directly on Vercel. Do this locally.');
         } else {
           setMessage('Failed to upload avatar.');
         }
@@ -140,8 +160,11 @@ export default function Admin() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ pdf: base64Data }),
         });
-        if (res.ok) {
+        const contentType = res.headers.get("content-type");
+        if (res.ok && contentType && contentType.includes("application/json")) {
           setMessage('CV document updated successfully!');
+        } else if (res.ok) {
+          setMessage('Notice: Cannot upload documents directly on Vercel. Do this locally.');
         } else {
           setMessage('Failed to upload CV.');
         }
