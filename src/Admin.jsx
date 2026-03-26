@@ -23,7 +23,13 @@ export default function Admin() {
       const res = await fetch('/api/data');
       if (res.ok) {
         const json = await res.json();
-        setData(json);
+        setData({
+          profile: json.profile || {},
+          projects: json.projects || [],
+          blogs: json.blogs || []
+        });
+      } else {
+        setMessage('Failed to load data. API returned error.');
       }
     } catch (e) {
       console.error(e);
