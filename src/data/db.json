@@ -9,134 +9,127 @@
     "twitter": "https://x.com/abhi_tiwari060",
     "heroBio": "Passionate tech learner sharing knowledge through blogs. Focusing on backend architecture, reactive interfaces, and continuous learning.",
     "aboutBio1": "I am an MCA student and a passionate tech learner who loves sharing knowledge through blogs. I regularly write about JavaScript, programming concepts, and software development topics.",
-    "aboutBio2": "Currently, I am focusing on becoming a full stack developer while improving my problem-solving and communication skills."
+    "aboutBio2": "Currently, I am focusing on becoming a full stack developer while improving my problem-solving and communication skills.",
+    "theme": "crimson"
   },
   "projects": [
     {
-      "id": 2,
-      "title": "QuantumStore",
-      "description": "Next-gen e-commerce platform with AR product preview, AI-driven recommendations, and one-tap checkout.",
-      "image": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80",
-      "tags": [
-        "Next.js",
-        "Stripe",
-        "Three.js",
-        "PostgreSQL"
-      ],
-      "demo": "#",
-      "github": "#"
-    },
-    {
-      "id": 3,
-      "title": "DataVault",
-      "description": "Real-time analytics dashboard with live charts, anomaly detection, and customizable widgets for big-data pipelines.",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
-      "tags": [
-        "React",
-        "D3.js",
-        "Node.js",
-        "MongoDB"
-      ],
-      "demo": "#",
-      "github": "#"
-    },
-    {
-      "id": 4,
-      "title": "OrbitOS",
-      "description": "A cloud-based operating system UI with drag-and-drop file management, multi-tab browsing, and real-time collaboration.",
-      "image": "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80",
-      "tags": [
-        "Vue",
-        "WebRTC",
-        "AWS",
-        "Redis"
-      ],
-      "demo": "#",
-      "github": "#"
-    },
-    {
       "id": 5,
-      "title": "MetaCanvas",
-      "description": "NFT creation and gallery platform with AI-assisted art generation, on-chain minting, and social marketplace.",
-      "image": "https://images.unsplash.com/photo-1639762681057-408e52192e55?w=600&q=80",
+      "title": "Clone",
+      "description": "Clone home page of CursorUI",
+      "image": "/project-5.jpg",
       "tags": [
-        "React",
-        "Solidity",
-        "IPFS",
-        "Ethers.js"
+        "HTML",
+        "CSS"
       ],
-      "demo": "#",
-      "github": "#"
+      "demo": "https://cursoruiclone.netlify.app/",
+      "github": "https://github.com/abhinavtiwari060/CursorClone.git"
     },
     {
       "id": 6,
-      "title": "PulseHealth",
-      "description": "Smart health monitoring app with AI diagnostics, wearables integration, and telemedicine video consultations.",
-      "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80",
+      "title": "Portfolio",
+      "description": "This is My portfolio website which is created my me  to demonstrate my react skills",
+      "image": "/project-6.jpg",
       "tags": [
-        "React Native",
-        "TensorFlow",
-        "GraphQL",
-        "Firebase"
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React.js"
       ],
-      "demo": "#",
-      "github": "#"
+      "demo": "https://abhinavtiwari.netlify.app/",
+      "github": "https://github.com/abhinavtiwari060/abhinav-portfolio.git"
     }
   ],
   "blogs": [
     {
-      "id": 1,
-      "title": "Understanding JavaScript Closures",
-      "date": "March 15, 2025",
-      "category": "JavaScript",
-      "excerpt": "A deep dive into how closures work in JavaScript, scope chains, and practical examples of where to use them in your daily development.",
-      "readTime": "6 min read",
-      "link": "https://hashnode.com/@abhitiwari"
+      "id": 1775467515605,
+      "title": "Emmet for HTML: A Beginner’s Guide to Writing Faster Markup",
+      "date": "January 26, 2026",
+      "category": "HTML",
+      "excerpt": "Writing HTML without Emmet feels slow and tiring, especially for beginners. You have to type every opening tag, closing tag, and indentation manually, which takes time and increases the chance of mistakes.",
+      "readTime": "3 min",
+      "link": "https://abhinavdev.hashnode.dev/emmet-for-html-a-beginners-guide-to-writing-faster-markup?showSharer=true"
+    },
+    {
+      "id": 1775467462155,
+      "title": "Understanding HTML Tags and Elements",
+      "date": "January 26, 2026",
+      "category": "HTML (WEB)",
+      "excerpt": "HTML (HyperText Markup Language) is the basic building block of the web. It is used to create the structure of a webpage. HTML tells the browser what content exists on a page, like headings, paragraphs, images, links, forms, and buttons. ",
+      "readTime": "4 min",
+      "link": "https://abhinavdev.hashnode.dev/understanding-html-tags-and-elements?showSharer=true"
+    },
+    {
+      "id": 1775467389577,
+      "title": "How a Browser Works: A Beginner-Friendly Guide to Browser Internals",
+      "date": "January 26, 2026",
+      "category": "Browser",
+      "excerpt": "A browser is not just something that opens websites; it is actually a translator, loader, and security guard between me and the internet. When I type a website name, the browser first figures out where that site lives using DNS, then sends requests to the server using internet rules like HTTP or HTTPS.",
+      "readTime": "8 min",
+      "link": "https://abhinavdev.hashnode.dev/how-a-browser-works-a-beginner-friendly-guide-to-browser-internals?showSharer=true"
+    },
+    {
+      "id": 1775467323067,
+      "title": "TCP Working: 3-Way Handshake & Reliable Communication",
+      "date": "January 24, 2026",
+      "category": "Networking",
+      "excerpt": "Imagine sending a long message over the internet without any rules. Some parts of the message may arrive late, some may arrive twice, and some parts may not arrive at all. The message may also reach in the wrong order. Because of this, the receiver will not know which part is correct, which part is missing, or how to put the message back together properly.",
+      "readTime": "4 min",
+      "link": "https://abhinavdev.hashnode.dev/tcp-working-3-way-handshake-and-reliable-communication?showSharer=true"
+    },
+    {
+      "id": 1775467265476,
+      "title": "TCP vs UDP",
+      "date": "January 24, 2026",
+      "category": "Networking",
+      "excerpt": "A protocol is a set of rules for communication; it tells computers how to talk, what format to use, and when to send and receive data. TCP(Transmission Control Protocol) and UDP(User Datagram Protocol) is a protocol by which we transmit data",
+      "readTime": "6 min",
+      "link": "https://abhinavdev.hashnode.dev/tcp-vs-udp?showSharer=true"
+    },
+    {
+      "id": 1775467187091,
+      "title": "Understanding Network Devices",
+      "date": "January 20, 2026",
+      "category": "Networking",
+      "excerpt": "Modem stands for Modulator/Demodulator. A modem is a networking device that is used to connect our computer (or devices ) to the internet. The main work of a modem is to make communication between analog signal and a digital signal. It acts like a bridge between you and your internet service provider",
+      "readTime": "6 min",
+      "link": "https://abhinavdev.hashnode.dev/understanding-network-devices?showSharer=true"
+    },
+    {
+      "id": 1775467100891,
+      "title": "How DNS Resolution Works",
+      "date": "January 26, 2026",
+      "category": "Networking",
+      "excerpt": "The Domain Name System (DNS) is like the phonebook of the internet. It helps us use easy-to-remember website names (like google.com) and converts them into IP addresses that computers understand. Instead of having one central database, DNS is distributed and hierarchical, which means different servers are responsible for different parts of the internet. ",
+      "readTime": "6 min",
+      "link": "https://abhinavdev.hashnode.dev/how-dns-resolution-works?showSharer=true"
+    },
+    {
+      "id": 1775467040010,
+      "title": "Getting Started with cURL",
+      "date": "January 25, 2026",
+      "category": "Networking",
+      "excerpt": "cURL is a very basic and powerful tool that programmers use to communicate directly with a server. The word cURL stands for Client URL, and it is a command-line tool, which means you use it from the terminal instead of a browser. ",
+      "readTime": "4 min",
+      "link": "https://abhinavdev.hashnode.dev/getting-started-with-curl?showSharer=true"
     },
     {
       "id": 2,
-      "title": "React Server Components: The Complete Guide",
-      "date": "February 28, 2025",
-      "category": "React",
-      "excerpt": "RSC flips the mental model of React development. Here's everything you need to know about server-first rendering, streaming, and Suspense boundaries.",
-      "readTime": "9 min read",
-      "link": "https://hashnode.com/@abhitiwari"
+      "title": "CSS Selectors 101: Targeting Elements with Precision",
+      "date": "January 27, 2026",
+      "category": "CSS",
+      "excerpt": "CSS selectors are used to choose which HTML elements we want to style on a web page. They help us tell the browser exactly where to apply styles like color, font, spacing, and layout. Instead of styling everything, selectors let us target only specific elements or a group of elements. The HTML element that gets selected by a CSS selector is called the subject of the selector.",
+      "readTime": "4 min read",
+      "link": "https://abhinavdev.hashnode.dev/css-selectors-101-targeting-elements-with-precision"
     },
     {
       "id": 3,
-      "title": "Mastering Node.js Fundamentals",
-      "date": "January 20, 2025",
-      "category": "Node.js",
-      "excerpt": "Building high-performance APIs requires understanding the event loop, streams, and non-blocking I/O. Explore the most critical Node concepts.",
-      "readTime": "7 min read",
-      "link": "https://hashnode.com/@abhitiwari"
-    },
-    {
-      "id": 4,
-      "title": "The Future of CSS: 2025 Edition",
-      "date": "December 10, 2024",
-      "category": "CSS",
-      "excerpt": "Container queries, @scope, color-mix(), and the Houdini Paint API arrive mainstream. Here's how to adopt the best parts right now.",
-      "readTime": "5 min read",
-      "link": "https://hashnode.com/@abhitiwari"
-    },
-    {
-      "id": 5,
-      "title": "Git Workflows you need to know",
-      "date": "November 5, 2024",
-      "category": "Programming",
-      "excerpt": "From Git Flow to trunk-based development, discover the best workflow for your team and how to avoid merge conflicts.",
-      "readTime": "8 min read",
-      "link": "https://hashnode.com/@abhitiwari"
-    },
-    {
-      "id": 6,
-      "title": "Why Technical Writing Makes You a Better Developer",
-      "date": "October 22, 2024",
-      "category": "Tech Writing",
-      "excerpt": "Explaining concepts to others is the best way to solidify your own understanding. Learn how to start your tech blog journey today.",
-      "readTime": "4 min read",
-      "link": "https://hashnode.com/@abhitiwari"
+      "title": "DNS Record Types Explained",
+      "date": "January 25, 2026",
+      "category": "Networking",
+      "excerpt": "How does a browser know where a website lives?\nWhen you type a website URL into your browser, the browser doesn’t immediately know where that website lives. First, it needs to find the physical server (machine) where the website is hosted.",
+      "readTime": "6 min read",
+      "link": "https://abhinavdev.hashnode.dev/dns-record-types-explained?showSharer=true"
     }
   ]
 }

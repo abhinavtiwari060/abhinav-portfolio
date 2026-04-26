@@ -17,7 +17,7 @@ const contactInfo = [
 ];
 
 export default function ContactSection() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [sent, setSent] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -33,7 +33,7 @@ export default function ContactSection() {
       });
       if (response.ok) {
         setSent(true);
-        setForm({ name: '', email: '', message: '' });
+        setForm({ name: '', email: '', subject: '', message: '' });
         setTimeout(() => setSent(false), 3000);
       }
     } catch (error) {
@@ -152,7 +152,10 @@ export default function ContactSection() {
                 <div style={{ marginBottom: 20 }}>
                   <label style={{ fontSize: 13, fontWeight: 600, display: 'block', marginBottom: 8,
                     color: 'rgba(var(--color-white-rgb),0.5)' }}>Subject</label>
-                  <input className="input-glass" placeholder="Project Collaboration" />
+                  <input 
+                    className="input-glass" placeholder="Project Collaboration" required
+                    value={form.subject} onChange={(e) => setForm(f => ({ ...f, subject: e.target.value }))}
+                  />
                 </div>
 
                 <div style={{ marginBottom: 28 }}>

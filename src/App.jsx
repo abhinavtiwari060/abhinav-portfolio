@@ -9,6 +9,7 @@ import BlogSection from './components/blog/BlogSection';
 import ContactSection from './components/contact/ContactSection';
 import Footer from './components/footer/Footer';
 import { Lock } from 'lucide-react';
+import db from './data/db.json';
 
 function ScrollProgress() {
   const [width, setWidth] = useState(0);
@@ -25,6 +26,10 @@ function ScrollProgress() {
 }
 
 export default function App() {
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', db.profile?.theme || 'default');
+  }, []);
+
   return (
     <div className="animated-gradient" style={{ minHeight: '100vh', position: 'relative', overflowX: 'hidden' }}>
       <div className="noise-overlay" />
