@@ -1,11 +1,13 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { useRef, useEffect, Suspense } from 'react';
+import { useRef, useEffect, Suspense, useState } from 'react';
 import { Float, useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 
 function ProfileCard() {
   const meshRef = useRef();
   const mouse = useRef({ x: 0, y: 0 });
+
+  const [texture, setTexture] = useState(null);
 
   useEffect(() => {
     const onMove = (e) => {
@@ -16,7 +18,29 @@ function ProfileCard() {
     return () => window.removeEventListener('mousemove', onMove);
   }, []);
 
-  const texture = useTexture(`/avatar.jpg`);
+  useEffect(() => {
+    const loader = new THREE.TextureLoader();
+    loader.load(
+      '/avatar.jpg',
+      (tex) => setTexture(tex),
+      undefined,
+      (err) => {
+        console.warn('Avatar texture not found, using fallback color.');
+        // Generate a simple fallback texture
+        const canvas = document.createElement('canvas');
+        canvas.width = 128;
+        canvas.height = 128;
+        const ctx = canvas.getContext('2d');
+        ctx.fillStyle = '#0b0b1a';
+        ctx.fillRect(0, 0, 128, 128);
+        ctx.strokeStyle = '#a855f7';
+        ctx.lineWidth = 10;
+        ctx.strokeRect(0, 0, 128, 128);
+        const fbTex = new THREE.CanvasTexture(canvas);
+        setTexture(fbTex);
+      }
+    );
+  }, []);
 
   useFrame((state) => {
     meshRef.current.rotation.x = THREE.MathUtils.lerp(meshRef.current.rotation.x, mouse.current.y * 0.3, 0.05);
@@ -42,7 +66,7 @@ function ProfileCard() {
         {/* Circular photo magically floating inside the frame */}
         <mesh position={[0, 0, 0.08]}>
           <circleGeometry args={[1.25, 64]} />
-          <meshBasicMaterial map={texture} />
+          {texture ? <meshBasicMaterial map={texture} /> : <meshBasicMaterial color="#1a1a2e" />}
         </mesh>
 
       </group>
